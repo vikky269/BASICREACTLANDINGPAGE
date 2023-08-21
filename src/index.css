@@ -10,14 +10,30 @@
   box-sizing: border-box;
 }
 
+
+:root {
+  --clr-accent-bright: #61dafb;
+  --clr-accent-very-bright: #deebf8;
+
+  --clr-background-light: #f5f5f5;
+  --clr-background-lighter: #fff;
+
+  --clr-background-dark: #282d35;
+  --clr-background-darker: #21222a;
+
+  --ff-main: "Inter", sans-serif;
+}
+
+
 .nav{
   display: flex;
   justify-content: space-between;
-  background-color: black;
-  color: white;
+   box-shadow: 2px 2px 4px #adaaaa;
+  color: black;
   padding: 30px 25px;
   height: 90px;
 }
+
 .nav-box{
   display: flex;
   justify-content: space-between;
@@ -34,22 +50,40 @@
   padding: 5px 0px;
   font-size: 17px;
 }
+
+nav.dark {
+  background-color: var(--clr-background-darker);
+  box-shadow: 0px 1px 4px rgba(255, 255, 255, 0.25);
+}
+Main.dark {
+  background-color: var(--clr-background-darker);
+  box-shadow: 0px 1px 4px rgba(255, 255, 255, 0.25);
+}
+Main.dark .container {
+  background-color: var(--clr-background-darker);
+  box-shadow: 0px 1px 4px rgba(255, 255, 255, 0.25);
+  color: white;
+}
 .container{
   height: 100vh;
   padding:  57px 27px;
-  background-color: #282d35;
-  color: white;
+ /* background-color: #282d35;*/
+  color: black;
   background-image: url(./images/reactlogo.png);
   background-position: right center;
   background-repeat: no-repeat;
 }
+
+
 .container-text{
   font-size: 39px;
   letter-spacing: -0.05em;
+  z-index: 1;
 }
 .container-list{
   padding:  15px 20px;
   max-width: 700px;
+  z-index: 12;
 }
 .container-list li{
    padding-block: 10px;
@@ -59,4 +93,64 @@
 .container-list li::marker{
   font-size: 1.4em;
   color: #61dafb;
+}
+.toggler {
+  display: flex;
+  align-items: center;
+  border: 2px solid red;
+}
+
+.toggler p {
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.toggler--slider {
+  width: 25px;
+  height: 13px;
+  background-color: #2b283a;
+  border-radius: 2rem;
+  margin-inline: 7px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid black;
+  box-sizing: content-box;
+}
+
+nav.dark .toggler--slider {
+  border-color: var(--clr-background-lighter);
+  background-color: #f5f5f5;
+}
+
+.toggler--slider--circle {
+  height: 13px;
+  width: 13px;
+  background-color: var(--clr-background-lighter);
+  border-radius: 50%;
+}
+
+nav.dark .toggler--slider--circle {
+  background-color: black;
+}
+
+.toggler--light {
+  color: #2b283a;
+}
+
+nav.dark .toggler--light {
+  color: #918e9b;
+}
+
+.toggler--dark {
+  color: #d5d4d8;
+}
+
+nav.dark .toggler-dark {
+  color: var(--clr-background-lighter);
+}
+
+nav.dark .toggler--slider {
+  justify-content: flex-end;
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 
-export function Home() {
+export function Home(props) {
     
 
     return (
         <>
-            <main className='container'>
+         <main className={props.darkMode ? "dark" : ""} >
+            <div className='container'>
                 <h1 className='container-text'>Fun Facts about React</h1>
                 <ul className='container-list'>
                     <li>Was first released in 2013</li>
@@ -14,7 +15,8 @@ export function Home() {
                     <li>Is maintained by facebook</li>
                     <li>Powers thousands of enterprise apps including mobile apps</li>
                 </ul>
-            </main>
+            </div>
+        </main>
         </>
     )
 }

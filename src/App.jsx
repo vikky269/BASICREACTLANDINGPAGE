@@ -6,11 +6,17 @@ import { Home } from './components/Home'
 
 function App() {
 
+  const [darkMode, setDarkMode] = React.useState(false);
+
+  function toggleDarkMode() {
+    setDarkMode((prevMode) => !prevMode);
+  }
+
 
   return (
     <>
-     <Navbar />
-     <Home />
+     <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+     <Home darkMode={darkMode}  />
     </>
   )
 }
