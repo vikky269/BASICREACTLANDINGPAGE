@@ -97,7 +97,6 @@ Main.dark .container {
 .toggler {
   display: flex;
   align-items: center;
-  border: 2px solid red;
 }
 
 .toggler p {
